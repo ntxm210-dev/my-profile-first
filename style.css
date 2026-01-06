@@ -1,0 +1,203 @@
+/* Đây là nơi quy định vẻ đẹp cho toàn bộ web */
+
+body {
+    background-color: #f0f2f5; /* Màu nền xám nhẹ cho cả trang web */
+    font-family: 'Be Vietnam Pro', sans-serif; /* Phông chữ dễ đọc */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao bằng 100% màn hình */
+    margin: 0;
+}
+
+/* Tạo ra một cái khung thẻ (Card) */
+.card-profile {
+    background-color: rgb(174, 197, 254);
+    width: 700px; /* Độ rộng của thẻ */
+    padding: 30px;
+    border-radius: 15px; /* Bo tròn góc */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Đổ bóng mờ ảo phía sau */
+    text-align: center; /* Căn giữa toàn bộ chữ bên trong */
+}
+
+/* Trang trí cho ảnh */
+img {
+    border-radius: 50%; /* Biến ảnh thành hình tròn */
+    object-fit: cover; /* Cắt ảnh cho vừa khung tròn */
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff; /* Viền trắng quanh ảnh */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* Chìa khóa: Chuyển động mượt mà trong 0.4 giây */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+/* Khi di chuột vào ảnh */
+img:hover {
+    transform: scale(1.1) rotate(5deg); /* Phóng to 10% và xoay nhẹ 5 độ */
+    box-shadow: 0 10px 25px rgba(26, 188, 156, 0.4); /* Phát sáng nhẹ màu xanh */
+    cursor: pointer;
+}
+
+h2 {
+    text-align: left
+}
+
+/* Trang trí cho danh sách sở thích */
+ul {
+    text-align: left;      /* Đảm bảo chữ căn trái */
+    padding-left: 20px;    /* CHÌA KHÓA: Giảm số này để chữ lùi ra sát lề trái hơn */
+    margin: 0;             /* Xóa khoảng cách thừa bên ngoài */
+    list-style-position: inside; /* (Tùy chọn) Đưa dấu chấm vào bên trong dòng */
+}
+
+li {
+    margin-bottom: 2px;    /* Các dòng sở thích nằm sát nhau hơn */
+    font-size: 0.9rem;
+}
+
+/* Trang trí nút bấm */
+.nut-lien-he {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 50px; /* Nút bo tròn như viên thuốc */
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s; /* Hiệu ứng chuyển động mượt */
+    box-shadow: 0 4px rgb(34, 76, 65) 
+}
+
+.nut-lien-he:hover {
+    background-color: #16a085; /* Khi di chuột vào thì đậm hơn chút */
+    transform: scale(1.05); /* Phóng to nhẹ lên */
+}
+/*  làm cho mỗi dòng "sáng lên" khi di chuột qua:*/
+li {
+    transition: 0.3s;
+    padding: 5px 0;
+}
+
+li:hover {
+    color: #1abc9c; /* Đổi màu chữ xanh */
+    padding-left: 10px; /* Chữ tự động "nhích" sang phải một chút */
+}
+
+/* Sử dụng Flexbox để dàn hàng ngang */
+.stats-container {
+    display: flex;             /* Bật chế độ chiếc hộp ma thuật */
+    justify-content: space-around; /* Chia đều khoảng cách giữa các mục */
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;    /* Sắp xếp số và chữ theo hàng dọc */
+    align-items: center;       /* Căn giữa */
+}
+
+.stat-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #159f84;            /* Màu xanh bạn yêu thích */
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #596263;
+}
+
+/* Khi màn hình nhỏ hơn hoặc bằng 480px (Điện thoại) */
+@media (max-width: 480px) {
+    .card-profile {
+        width: 90%;       /* Cái hộp sẽ chiếm 90% chiều ngang màn hình */
+        padding: 15px;    /* Thu nhỏ khoảng cách bên trong lại cho gọn */
+        body { background-color: #fabbe6; }
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Thu nhỏ tên lại một chút */
+    }
+
+    .stats-container {
+        flex-direction: column; /* Thay vì hàng ngang, trên điện thoại các con số sẽ xếp hàng dọc cho dễ nhìn */
+        gap: 10px;
+    }
+}
+
+/* icon các link */
+/* Sắp xếp các icon nằm ngang */
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center; /* Căn giữa hàng ngang */
+    gap: 20px;               /* Khoảng cách giữa các icon */
+}
+
+/* Trang trí cho từng nút icon */
+.social-icon {
+    text-decoration: none;
+    font-size: 1.5rem;       /* Kích thước icon */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;      /* Làm tròn nút */
+    background-color: white; /* Nền trắng */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bóng mờ nhẹ */
+    
+    /* Căn icon vào giữa hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Quan trọng: Tạo độ mượt khi đổi màu */
+    transition: all 0.3s ease;
+}
+
+/* HIỆU ỨNG KHI DI CHUỘT VÀO (HOVER) */
+.social-icon:hover {
+    background-color: #1abc9c; /* Đổi nền sang màu xanh ngọc */
+    color: white;              /* Đổi icon sang màu trắng */
+    transform: translateY(-5px); /* Nút sẽ "bay" lên nhẹ 5px */
+    box-shadow: 0 10px 20px rgba(26, 188, 156, 0.4); /* Bóng đổ màu xanh phát sáng */
+}
+
+/* Lệnh để dàn hàng ngang */
+.container-ngang {
+    display: flex;         /* Bật chế độ dàn hàng ngang */
+    justify-content: space-between; /* Đẩy 2 phần về 2 phía */
+    align-items: flex-start;    /* Căn lề trên bằng nhau */
+    margin-top: 30px;
+    padding: 0 20px;       /* Tạo khoảng cách với lề một chút */
+}
+
+/* Chỉnh độ rộng cho mỗi cột */
+.cot-so-thich {
+    flex: 1.2;             /* Phần sở thích rộng hơn một chút */
+    text-align: left;      /* Chữ căn trái cho đẹp */
+}
+
+.cot-lien-he {
+    flex: 1;               /* Phần liên hệ chiếm phần còn lại */
+    display: flex;
+    flex-direction: column; /* Xếp nút và icon theo hàng dọc bên trong cột này */
+    align-items: center;    /* Căn giữa nút và icon */
+    gap: 15px;             /* Khoảng cách giữa nút và các icon */
+}
+
+/* Thu nhỏ các icon một chút để vừa vặn không gian mới */
+.cot-lien-he .social-links {
+    margin-top: 0;         /* Xóa bỏ khoảng cách thừa */
+}
